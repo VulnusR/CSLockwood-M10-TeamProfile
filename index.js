@@ -49,7 +49,6 @@ const promptUser = () => {
             .then((engineerAnswer) => {
                 const engineer = new Engineer(answers.name, answers.id, answers.email, engineerAnswer.github);
                 employees.push(engineer);
-                //add prompt for new employee
             });
         }
 
@@ -67,7 +66,6 @@ const promptUser = () => {
             .then((internAnswer) => {
                 const intern = new Intern(answers.name, answers.id, answers.email, internAnswer.school);
                 employees.push(intern);
-                //add prompt for new employee
             });
         }
 
@@ -85,9 +83,28 @@ const promptUser = () => {
             .then((managerAnswer) => {
                 const manager = new Manager(answers.name, answers.id, answers.email, managerAnswer.officeNumber);
                 employees.push(manager);
-                //add prompt for new employee
             });
         }
     }); 
+
+    //either loops through the parent function if the user wants to add another employee or generates the html if they are done adding employees
+    const addMoreEmployees = () => {
+        inquirer.prompt([
+            {
+                type: "confirm",
+                name: "addMore",
+                message: "Would you like to add another employee?",
+            },
+        ])
+
+        .then((answer) => {
+            if (answer.addMore) {
+                promptUser();
+            }
+            else {
+                //generate html function
+            }
+        })
+    }
 }
 
