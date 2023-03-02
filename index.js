@@ -2,15 +2,11 @@ const inquirer = require("inquirer");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-const fs = require('fs');
-const path = require('path');
-
-const fileName = './output.html';
+const fs = require("fs");
 
 //stores Employee Objects
 const employees = [];
 
-let employeeCards = '';
 
 const promptUser = () => {
     //prompts user for information
@@ -129,21 +125,7 @@ const promptUser = () => {
             else {
                 const html = generateEmployeeCards(employees);
                 console.log(html); 
-
-                // Read the contents of the index.html file
-fs.readFile(path.join(__dirname, 'dist', 'index.html'), 'utf8', (err, data) => {
-    if (err) throw err;
-  
-    // Modify the contents of the file with the generated employee cards
-    const modifiedData = data.replace('<section id="sectionsparent"></section>', employeeCards);
-  
-    // Write the modified contents to a new file
-    fs.writeFile(fileName, modifiedData, (err) => {
-      if (err) throw err;
-  
-      console.log(`Successfully wrote ${'./output.html'}`);
-    });
-  });
+                writeToFile("./output.html", html)
             }
         })
     }
@@ -213,22 +195,33 @@ const generateEmployeeCards = (employees) => {
     const managers = employees.filter(employee => employee.getRole() === "Manager");
     const engineers = employees.filter(employee => employee.getRole() === "Engineer");
     const interns = employees.filter(employee => employee.getRole() === "Intern");
-  
+
+    // Read the contents of the index.html template file
+    const template = fs.readFileSync("./dist/index.html", "utf8");
+
     const managerCards = generateManagerCards(managers);
     const engineerCards = generateEngineerCards(engineers);
     const internCards = generateInternCards(interns);
-  
-    return `
+
+    // Replace the placeholder in the template with the generated employee cards
+    const output = template.replace("{{employeeCards}}", `
     <section id="sectionsparent">
       ${managerCards}
       ${engineerCards}
       ${internCards}
     </section>
-  `;
+    `);
+
+    return output;
+ 
 }
 
   promptUser();
 
-
-
-
+  const writeToFile = (fileName, data) => {
+    fs.writeFile(fileName, data, (err) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+    })}
