@@ -46,6 +46,12 @@ main {
     
 }
 
+.mcardimport {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .managerbox {
     width: 250px;
     height: 350px;
@@ -75,6 +81,12 @@ main {
     flex-wrap: wrap;
     min-height: fit-content;
     justify-content: center;
+}
+
+.ecardimport {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .engineerbox {
@@ -108,6 +120,12 @@ main {
     justify-content: center;
 }
 
+.icardimport {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .internbox {
     width: 250px;
     height: 350px;
@@ -128,3 +146,7 @@ main {
     padding: 3%;
     font-size: medium;
 }
+
+.empty {
+    display: none;
+  }

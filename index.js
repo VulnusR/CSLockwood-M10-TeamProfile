@@ -205,24 +205,14 @@ const generateEmployeeCards = (employees) => {
 
     // Replace the placeholder in the template with the generated employee cards
     const output = template
-      .replace("{{mreplace}}", `
-        <div class="managerbox">
-          ${managerCards}
-        </div>
-      `)
-      .replace("{{ereplace}}", `
-        <div class="engineerbox">
-          ${engineerCards}
-        </div>
-      `)
-      .replace("{{ireplace}}", `
-        <div class="internbox">
-          ${internCards}
-        </div>
-      `);
+  .replace("{{mreplace}}", managerCards ? `<div class="mcardimport">${managerCards}</div>` : '')
+  .replace("{{ereplace}}", engineerCards ? `<div class="ecardimport">${engineerCards}</div>` : '')
+  .replace("{{ireplace}}", internCards ? `<div class="icardimport">${internCards}</div>` : '');
 
-    return output;
+return output;
 }
+   
+  
 
   promptUser();
 
