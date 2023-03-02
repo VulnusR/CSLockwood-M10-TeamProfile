@@ -49,6 +49,13 @@ const promptUser = () => {
             .then((engineerAnswer) => {
                 const engineer = new Engineer(answers.name, answers.id, answers.email, engineerAnswer.github);
                 employees.push(engineer);
+
+                // Call the generateEmployeeCards function here and assign the result to a variable
+                const employeeCards = generateEmployeeCards(employees);
+                console.log(employeeCards); // just for testing purposes
+                // Call the addMoreEmployees function here
+
+                addMoreEmployees();
             });
         }
 
@@ -66,6 +73,13 @@ const promptUser = () => {
             .then((internAnswer) => {
                 const intern = new Intern(answers.name, answers.id, answers.email, internAnswer.school);
                 employees.push(intern);
+
+                // Call the generateEmployeeCards function here and assign the result to a variable
+                const employeeCards = generateEmployeeCards(employees);
+                console.log(employeeCards); // just for testing purposes
+                // Call the addMoreEmployees function here
+
+                addMoreEmployees();
             });
         }
 
@@ -133,22 +147,64 @@ const generateManagerCards = (managers) => {
         </div>
       `;
     }).join("");
-  }
-
-
-
-  // Function to generate HTML for employee cards
-const generateEmployeeCards = (employees) => {
-    const managers = employees.filter(employee => employee.getRole() === "Manager");
-    const managerCards = generateManagerCards(managers);
-    return `
-    <section id="sectionsparent">
-    <section id="managersectionparent">
-      ${managerCards}
-    </section>
-  </section>
-`;
 }
 
-promptUser()
-        
+// Function to generate HTML for engineer cards
+const generateEngineerCards = (engineers) => {
+    return engineers.map(engineer => {
+      return `
+        <div class="engineerbox">
+          <div class="eboxheader bg-red-400 dark:bg-red-800 h-1/4 font-serif font-serif">
+            <h2 class="font-black">${engineer.getName()}</h2>
+            <h3 class="font-medium pt-8">Engineer</h3>
+          </div>
+          <div class="eboxbody mboxbody bg-cardbody h-2/3">
+            <h5 class="font-light pt-9">ID: ${engineer.getId()}</h5>
+            <h5 class="font-light pt-9">Email: ${engineer.getEmail()}</h5>
+            <h5 class="font-light pt-9">Github: ${engineer.getGithub()}</h5>
+          </div>
+        </div>
+      `;
+    }).join("");
+}
+
+// Function to generate HTML for intern cards
+const generateInternCards = (interns) => {
+    return interns.map(intern => {
+      return `
+        <div class="internbox bg-btn">
+          <div class="iboxheader bg-blue-400 dark:bg-blue-800 h-1/4 font-serif font-serif">
+            <h2 class="font-black">${intern.getName()}</h2>
+            <h3 class="font-medium pt-8">Intern</h3>
+          </div>
+          <div class="iboxbody mboxbody bg-cardbody h-2/3">
+            <h5 class="font-light pt-9">ID: ${intern.getId()}</h5>
+            <h5 class="font-light pt-9">Email: ${intern.getEmail()}</h5>
+            <h5 class="font-light pt-9">School: ${intern.getSchool()}</h5>
+          </div>
+        </div>
+      `;
+    }).join("");
+}
+
+
+// Function to generate HTML for all employee cards
+const generateEmployeeCards = (employees) => {
+    const managers = employees.filter(employee => employee.getRole() === "Manager");
+    const engineers = employees.filter(employee => employee.getRole() === "Engineer");
+    const interns = employees.filter(employee => employee.getRole() === "Intern");
+  
+    const managerCards = generateManagerCards(managers);
+    const engineerCards = generateEngineerCards(engineers);
+    const internCards = generateInternCards(interns);
+  
+    return `
+    <section id="sectionsparent">
+      ${managerCards}
+      ${engineerCards}
+      ${internCards}
+    </section>
+  `;
+}
+
+  promptUser();
