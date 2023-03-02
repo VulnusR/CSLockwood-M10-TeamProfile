@@ -18,14 +18,19 @@
             to-blue-400 
             via-gray-300;
         }
+
         .bg-dark {
            @apply bg-gradient-to-br
            from-red-800
            to-blue-800
            via-gray-800
         }
-        .bg-btn {
-        @apply bg-yellow-400
+
+        .bg-cardbody {
+        @apply bg-gradient-to-br
+           from-slate-50
+           to-slate-500
+           via-slate-300
         }
       }
     </style>
@@ -34,172 +39,60 @@
 
    
     <body>
-        <header class = "bg-white dark:bg-black">
+        <header class = "bg-slate-100 dark:bg-zinc-900">
             <h1 class="text-red-700 italic font-serif text-4xl">Project Team</h1>
         </header>
-        <main class="bg-primary">
+
+        <main class="bg-primary dark:bg-dark">
             <section id="sectionsparent">
+
                 <section id="managersectionparent">
                     <div class="managerbox">
 
-                       <div class="mboxheader">
-                          <h2>Test Namee</h2>
-                          <h3>Test Role</h3>
+                       <div class="mboxheader bg-fuchsia-400 dark:bg-purple-800 h-1/4 font-serif font-serif">
+                          <h2 class="font-black">Test Namee</h2>
+                          <h3 class="font-medium pt-8">Test Role</h3>
                        </div>
-                       <div class="mboxbody">
-                        <div>
-                            <h5>ID:1</h5>
-                            <h5>Email: sdfgsgsg@drgdfgd</h5>
-                            <h5>Dynamic box</h5>
-                        </div>
+
+                       <div class="mboxbody bg-cardbody h-2/3">
+                            <h5 class="font-light pt-9">ID:1</h5>
+                            <h5 class="font-light pt-9">Email: sdfgsgsg@drgdfgd</h5>
+                            <h5 class="font-light pt-9">Dynamic box</h5>
                        </div>
                     </div>
-
-                    <div class="managerbox">
-                        
-                        <div class="mboxheader">
-                           <h2>Test Namee</h2>
-                           <h3>Test Role</h3>
-                        </div>
-                        <div class="mboxbody">
-                         <div>
-                             <h5>ID:1</h5>
-                             <h5>Email: sdfgsgsg@drgdfgd</h5>
-                             <h5>Dynamic box</h5>
-                         </div>
-                        </div>
-                     </div>
-
-                     <div class="managerbox">
-                        
-                        <div class="mboxheader">
-                           <h2>Test Namee</h2>
-                           <h3>Test Role</h3>
-                        </div>
-                        <div class="mboxbody">
-                         <div>
-                             <h5>ID:1</h5>
-                             <h5>Email: sdfgsgsg@drgdfgd</h5>
-                             <h5>Dynamic box</h5>
-                         </div>
-                        </div>
-                     </div>
-
-                     <div class="managerbox">
-                        
-                        <div class="mboxheader">
-                           <h2>Test Namee</h2>
-                           <h3>Test Role</h3>
-                        </div>
-                        <div class="mboxbody">
-                         <div>
-                             <h5>ID:1</h5>
-                             <h5>Email: sdfgsgsg@drgdfgd</h5>
-                             <h5>Dynamic box</h5>
-                         </div>
-                        </div>
-                     </div>
-
-                     <div class="managerbox">
-                        
-                        <div class="mboxheader">
-                           <h2>Test Namee</h2>
-                           <h3>Test Role</h3>
-                        </div>
-                        <div class="mboxbody">
-                         <div>
-                             <h5>ID:1</h5>
-                             <h5>Email: sdfgsgsg@drgdfgd</h5>
-                             <h5>Dynamic box</h5>
-                         </div>
-                        </div>
-                     </div>
-
-                     <div class="managerbox">
-                        
-                        <div class="mboxheader">
-                           <h2>Test Namee</h2>
-                           <h3>Test Role</h3>
-                        </div>
-                        <div class="mboxbody">
-                         <div>
-                             <h5>ID:1</h5>
-                             <h5>Email: sdfgsgsg@drgdfgd</h5>
-                             <h5>Dynamic box</h5>
-                         </div>
-                        </div>
-                     </div>
-
-                     <div class="managerbox">
-                        
-                        <div class="mboxheader">
-                           <h2>Test Namee</h2>
-                           <h3>Test Role</h3>
-                        </div>
-                        <div class="mboxbody">
-                         <div>
-                             <h5>ID:1</h5>
-                             <h5>Email: sdfgsgsg@drgdfgd</h5>
-                             <h5>Dynamic box</h5>
-                         </div>
-                        </div>
-                     </div>
-
-
-                     <div class="managerbox">
-                        
-                        <div class="mboxheader">
-                           <h2>Test Namee</h2>
-                           <h3>Test Role</h3>
-                        </div>
-                        <div class="mboxbody">
-                         <div>
-                             <h5>ID:1</h5>
-                             <h5>Email: sdfgsgsg@drgdfgd</h5>
-                             <h5>Dynamic box</h5>
-                         </div>
-                        </div>
-                     </div>
-
-
-                     <div class="managerbox">
-                        
-                        <div class="mboxheader">
-                           <h2>Test Namee</h2>
-                           <h3>Test Role</h3>
-                        </div>
-                        <div class="mboxbody">
-                         <div>
-                             <h5>ID:1</h5>
-                             <h5>Email: sdfgsgsg@drgdfgd</h5>
-                             <h5>Dynamic box</h5>
-                         </div>
-                        </div>
-                     </div>
-
-
-
-
-
-
-
                 </section>
-                <section id="engineerparent">
-                    <div class="engineerbox">dfsgsfdg</div>
+
+                <section id="engineersectionparent">
+                    <div class="engineerbox">
+
+                       <div class="eboxheader bg-red-400 dark:bg-red-800 h-1/4 font-serif font-serif">
+                            <h2 class="font-black">Test Namee</h2>
+                            <h3 class="font-medium pt-8">Test Role</h3>
+                       </div>
+
+                       <div class="eboxbody mboxbody bg-cardbody h-2/3">
+                            <h5 class="font-light pt-9">ID:1</h5>
+                            <h5 class="font-light pt-9">Email: sdfgsgsg@drgdfgd</h5>
+                            <h5 class="font-light pt-9">Dynamic box</h5>
+                       </div>
+                    </div>
                 </section>
-                <section id="internparent">
-                    <div class="internbox">sdfgsfdg</div>
+
+                <section id="internsectionparent">
+                    <div class="internbox bg-btn">
+
+                       <div class="iboxheader bg-blue-400 dark:bg-blue-800 h-1/4 font-serif font-serif">
+                            <h2 class="font-black">Test Namee</h2>
+                            <h3 class="font-medium pt-8">Test Role</h3>
+                       </div>
+
+                       <div class="iboxbody mboxbody bg-cardbody h-2/3">
+                        <h5 class="font-light pt-9">ID:1</h5>
+                            <h5 class="font-light pt-9">Email: sdfgsgsg@drgdfgd</h5>
+                            <h5 class="font-light pt-9">Dynamic box</h5>
+                        </div>
+                    </div>
                 </section>
-            </section>
-         
-        
-        
-
-
-
-
-
         </main>
     </body>
-   
 </html>

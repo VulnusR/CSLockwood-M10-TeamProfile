@@ -29,6 +29,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 3%;
     width: 75%;
     height: 100%;
 
@@ -48,23 +49,82 @@ main {
 .managerbox {
     width: 250px;
     height: 350px;
-    background-color: aquamarine;
     margin: 15px;
-    
-
 }
 
-
-
-
-#engineerparent {
-    flex-direction: row;
-    height: 25%;
-    width: 75%;
+.mboxheader {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
+    color: white;
 }
 
-#internparent {
-    flex-direction: row;
+.mboxbody {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
+}
+
+#engineersectionparent {
     height: 25%;
-    width: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: fit-content;
+    justify-content: center;
+}
+
+.engineerbox {
+    width: 250px;
+    height: 350px;
+    margin: 15px;
+}
+
+.eboxheader {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
+    color: white;
+}
+
+.eboxbody {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
+}
+
+#internsectionparent {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: fit-content;
+    justify-content: center;
+}
+
+.internbox {
+    width: 250px;
+    height: 350px;
+    margin: 15px;
+}
+
+.iboxheader {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
+    color: white;
+}
+
+.iboxbody {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
 }
