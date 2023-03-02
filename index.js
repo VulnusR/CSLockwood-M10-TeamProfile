@@ -109,30 +109,21 @@ const promptUser = () => {
 }
 
 
-function generateManagerBoxes(employees) {
-    let managerBoxes = '';
-  
-    for (let i = 0; i < employees.length; i++) {
-      if (employees[i].getRole() === 'Manager') {
-        const manager = employees[i];
-        managerBoxes += `
-          <section id="managersectionparent">
-            <div class="managerbox">
-              <div class="mboxheader bg-fuchsia-400 dark:bg-purple-800 h-1/4 font-serif font-serif">
-                <h2 class="font-black">${manager.getName()}</h2>
-                <h3 class="font-medium pt-8">${manager.getRole()}</h3>
-              </div>
-              <div class="mboxbody bg-cardbody h-2/3">
-                <h5 class="font-light pt-9">ID: ${manager.getId()}</h5>
-                <h5 class="font-light pt-9">Email: ${manager.getEmail()}</h5>
-                <h5 class="font-light pt-9">Office Number: ${manager.getOfficeNumber()}</h5>
-              </div>
-            </div>
-          </section>
-        `;
-      }
-    }
-  
-    return managerBoxes;
+// Function to generate HTML for manager cards
+const generateManagerCards = (managers) => {
+    return managers.map(manager => {
+      return `
+        <div class="managerbox">
+          <div class="mboxheader bg-fuchsia-400 dark:bg-purple-800 h-1/4 font-serif font-serif">
+            <h2 class="font-black">${manager.getName()}</h2>
+            <h3 class="font-medium pt-8">Manager</h3>
+          </div>
+          <div class="mboxbody bg-cardbody h-2/3">
+            <h5 class="font-light pt-9">ID: ${manager.getId()}</h5>
+            <h5 class="font-light pt-9">Email: ${manager.getEmail()}</h5>
+            <h5 class="font-light pt-9">Office number: ${manager.getOfficeNumber()}</h5>
+          </div>
+        </div>
+      `;
+    }).join("");
   }
-
