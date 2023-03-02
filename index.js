@@ -127,3 +127,19 @@ const generateManagerCards = (managers) => {
       `;
     }).join("");
   }
+
+
+
+  // Function to generate HTML for employee cards
+const generateEmployeeCards = (employees) => {
+    const managers = employees.filter(employee => employee.getRole() === "Manager");
+    const managerCards = generateManagerCards(managers);
+    return `
+    <section id="sectionsparent">
+    <section id="managersectionparent">
+      ${managerCards}
+    </section>
+  </section>
+`;
+}
+        
