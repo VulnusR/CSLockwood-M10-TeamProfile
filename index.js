@@ -131,63 +131,68 @@ const promptUser = () => {
     }
 }
 
-
 // Function to generate HTML for manager cards
 const generateManagerCards = (managers) => {
-    return managers.map(manager => {
-      return `
-        <div class="managerbox">
-          <div class="mboxheader bg-fuchsia-400 dark:bg-purple-800 h-1/4 font-serif font-serif">
-            <h2 class="font-black">${manager.getName()}</h2>
-            <h3 class="font-medium pt-8">Manager</h3>
+    return managers
+      .map(
+        (manager) => `
+          <div class="managerbox">
+            <div class="mboxheader bg-fuchsia-400 dark:bg-purple-800 h-1/4 font-serif font-serif">
+              <h2 class="font-black">${manager.getName()}</h2>
+              <h3 class="font-medium pt-8">Manager</h3>
+            </div>
+            <div class="mboxbody bg-cardbody h-2/3">
+              <h5 class="font-light pt-9">ID: ${manager.getId()}</h5>
+              <h5 class="font-light pt-9">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></h5>
+              <h5 class="font-light pt-9">Office number: ${manager.getOfficeNumber()}</h5>
+            </div>
           </div>
-          <div class="mboxbody bg-cardbody h-2/3">
-            <h5 class="font-light pt-9">ID: ${manager.getId()}</h5>
-            <h5 class="font-light pt-9">Email: ${manager.getEmail()}</h5>
-            <h5 class="font-light pt-9">Office number: ${manager.getOfficeNumber()}</h5>
+        `
+      )
+      .join("");
+  };
+  
+  // Function to generate HTML for engineer cards
+  const generateEngineerCards = (engineers) => {
+    return engineers
+      .map(
+        (engineer) => `
+          <div class="engineerbox">
+            <div class="eboxheader bg-red-400 dark:bg-red-800 h-1/4 font-serif font-serif">
+              <h2 class="font-black">${engineer.getName()}</h2>
+              <h3 class="font-medium pt-8">Engineer</h3>
+            </div>
+            <div class="eboxbody mboxbody bg-cardbody h-2/3">
+              <h5 class="font-light pt-9">ID: ${engineer.getId()}</h5>
+              <h5 class="font-light pt-9">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></h5>
+              <h5 class="font-light pt-9">Github: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></h5>
+            </div>
           </div>
-        </div>
-      `;
-    }).join("");
-}
-
-// Function to generate HTML for engineer cards
-const generateEngineerCards = (engineers) => {
-    return engineers.map(engineer => {
-      return `
-        <div class="engineerbox">
-          <div class="eboxheader bg-red-400 dark:bg-red-800 h-1/4 font-serif font-serif">
-            <h2 class="font-black">${engineer.getName()}</h2>
-            <h3 class="font-medium pt-8">Engineer</h3>
+        `
+      )
+      .join("");
+  };
+  
+  // Function to generate HTML for intern cards
+  const generateInternCards = (interns) => {
+    return interns
+      .map(
+        (intern) => `
+          <div class="internbox">
+            <div class="iboxheader bg-blue-400 dark:bg-blue-800 h-1/4 font-serif font-serif">
+              <h2 class="font-black">${intern.getName()}</h2>
+              <h3 class="font-medium pt-8">Intern</h3>
+            </div>
+            <div class="iboxbody mboxbody bg-cardbody h-2/3">
+              <h5 class="font-light pt-9">ID: ${intern.getId()}</h5>
+              <h5 class="font-light pt-9">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></h5>
+              <h5 class="font-light pt-9">School: ${intern.getSchool()}</h5>
+            </div>
           </div>
-          <div class="eboxbody mboxbody bg-cardbody h-2/3">
-            <h5 class="font-light pt-9">ID: ${engineer.getId()}</h5>
-            <h5 class="font-light pt-9">Email: ${engineer.getEmail()}</h5>
-            <h5 class="font-light pt-9">Github: ${engineer.getGithub()}</h5>
-          </div>
-        </div>
-      `;
-    }).join("");
-}
-
-// Function to generate HTML for intern cards
-const generateInternCards = (interns) => {
-    return interns.map(intern => {
-      return `
-        <div class="internbox bg-btn">
-          <div class="iboxheader bg-blue-400 dark:bg-blue-800 h-1/4 font-serif font-serif">
-            <h2 class="font-black">${intern.getName()}</h2>
-            <h3 class="font-medium pt-8">Intern</h3>
-          </div>
-          <div class="iboxbody mboxbody bg-cardbody h-2/3">
-            <h5 class="font-light pt-9">ID: ${intern.getId()}</h5>
-            <h5 class="font-light pt-9">Email: ${intern.getEmail()}</h5>
-            <h5 class="font-light pt-9">School: ${intern.getSchool()}</h5>
-          </div>
-        </div>
-      `;
-    }).join("");
-}
+        `
+      )
+      .join("");
+  };
 
 
 // Function to generate HTML for all employee cards
