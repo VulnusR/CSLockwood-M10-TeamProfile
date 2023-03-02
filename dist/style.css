@@ -1,0 +1,70 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+  }
+
+header {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+main {
+    min-height: 100vh;
+    max-height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sectionsparent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    height: 100%;
+
+}
+
+#managersectionparent {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: fit-content;
+    justify-content: center;
+    
+}
+
+.managerbox {
+    width: 250px;
+    height: 350px;
+    background-color: aquamarine;
+    margin: 15px;
+    
+
+}
+
+
+
+
+#engineerparent {
+    flex-direction: row;
+    height: 25%;
+    width: 75%;
+}
+
+#internparent {
+    flex-direction: row;
+    height: 25%;
+    width: 75%;
+}
