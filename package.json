@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/VulnusR/CSLockwood-M10-TeamProfile/issues"
   },
-  "homepage": "https://github.com/VulnusR/CSLockwood-M10-TeamProfile#readme"
+  "homepage": "https://github.com/VulnusR/CSLockwood-M10-TeamProfile#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^29.4.3"
+  }
 }
