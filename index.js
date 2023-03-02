@@ -83,8 +83,14 @@ const promptUser = () => {
             .then((managerAnswer) => {
                 const manager = new Manager(answers.name, answers.id, answers.email, managerAnswer.officeNumber);
                 employees.push(manager);
+
+                // Call the generateEmployeeCards function here and assign the result to a variable
+                const employeeCards = generateEmployeeCards(employees);
+                console.log(employeeCards); // just for testing purposes
+                // Call the addMoreEmployees function here
+                addMoreEmployees();
             });
-        }
+        } 
     }); 
 
     //either loops through the parent function if the user wants to add another employee or generates the html if they are done adding employees
@@ -102,7 +108,8 @@ const promptUser = () => {
                 promptUser();
             }
             else {
-                //generate html function
+                const html = generateEmployeeCards(employees);
+                console.log(html); 
             }
         })
     }
@@ -142,4 +149,6 @@ const generateEmployeeCards = (employees) => {
   </section>
 `;
 }
+
+promptUser()
         
