@@ -1,0 +1,23 @@
+{
+  "name": "cslockwood-m10-teamprofile",
+  "version": "1.0.0",
+  "description": "The Module 10 challenge as part of the UCLA full stack coding bootcamp.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VulnusR/CSLockwood-M10-TeamProfile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VulnusR/CSLockwood-M10-TeamProfile/issues"
+  },
+  "homepage": "https://github.com/VulnusR/CSLockwood-M10-TeamProfile#readme"
+}
