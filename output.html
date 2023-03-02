@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+   <html lang="en">
+   
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+       <title>Project Team</title>
+       <link rel="stylesheet" href='./dist/style.css'>
+       <script src="https://cdn.tailwindcss.com?plugins=typography" rel="stylesheet"></script>
+       
+
+<style type="text/tailwindcss">
+      @layer components {
+        .bg-primary {
+          @apply bg-gradient-to-br 
+            from-red-300 
+            to-blue-400 
+            via-gray-300;
+        }
+
+        .bg-dark {
+           @apply bg-gradient-to-br
+           from-red-800
+           to-blue-800
+           via-gray-800
+        }
+
+        .bg-cardbody {
+        @apply bg-gradient-to-br
+           from-slate-50
+           to-slate-500
+           via-slate-300
+        }
+      }
+    </style>
+   </head>
+
+    <body>
+        <header class = "bg-slate-100 dark:bg-zinc-900">
+            <h1 class="text-red-700 italic font-serif text-4xl">Project Team</h1>
+        </header>
+
+        <main class="bg-primary dark:bg-dark">
+            <section id="sectionsparent">
+
+                <section id="managersectionparent">
+                    <div class="managerbox">
+
+                       <div class="mboxheader bg-fuchsia-400 dark:bg-purple-800 h-1/4 font-serif font-serif">
+                          <h2 class="font-black"></h2>
+                          <h3 class="font-medium pt-8"></h3>
+                       </div>
+
+                       <div class="mboxbody bg-cardbody h-2/3">
+                            <h5 class="font-light pt-9"></h5>
+                            <h5 class="font-light pt-9"></h5>
+                            <h5 class="font-light pt-9"></h5>
+                       </div>
+                    </div>
+                </section>
+
+                <section id="engineersectionparent">
+                    <div class="engineerbox">
+
+                       <div class="eboxheader bg-red-400 dark:bg-red-800 h-1/4 font-serif font-serif">
+                            <h2 class="font-black"></h2>
+                            <h3 class="font-medium pt-8"></h3>
+                       </div>
+
+                       <div class="eboxbody mboxbody bg-cardbody h-2/3">
+                            <h5 class="font-light pt-9"></h5>
+                            <h5 class="font-light pt-9"></h5>
+                            <h5 class="font-light pt-9"></h5>
+                       </div>
+                    </div>
+                </section>
+
+                <section id="internsectionparent">
+                    <div class="internbox">
+
+                       <div class="iboxheader bg-blue-400 dark:bg-blue-800 h-1/4 font-serif font-serif">
+                            <h2 class="font-black"></h2>
+                            <h3 class="font-medium pt-8"></h3>
+                       </div>
+
+                       <div class="iboxbody mboxbody bg-cardbody h-2/3">
+                        <h5 class="font-light pt-9"></h5>
+                            <h5 class="font-light pt-9"></h5>
+                            <h5 class="font-light pt-9"></h5>
+                        </div>
+                    </div>
+                </section>
+        </main>
+        <script src="../index.js"></script>
+    </body>
+</html>

@@ -2,10 +2,15 @@ const inquirer = require("inquirer");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
+const fs = require('fs');
+const path = require('path');
+
+const fileName = './output.html';
 
 //stores Employee Objects
 const employees = [];
 
+let employeeCards = '';
 
 const promptUser = () => {
     //prompts user for information
@@ -124,6 +129,21 @@ const promptUser = () => {
             else {
                 const html = generateEmployeeCards(employees);
                 console.log(html); 
+
+                // Read the contents of the index.html file
+fs.readFile(path.join(__dirname, 'dist', 'index.html'), 'utf8', (err, data) => {
+    if (err) throw err;
+  
+    // Modify the contents of the file with the generated employee cards
+    const modifiedData = data.replace('<section id="sectionsparent"></section>', employeeCards);
+  
+    // Write the modified contents to a new file
+    fs.writeFile(fileName, modifiedData, (err) => {
+      if (err) throw err;
+  
+      console.log(`Successfully wrote ${'./output.html'}`);
+    });
+  });
             }
         })
     }
@@ -208,3 +228,7 @@ const generateEmployeeCards = (employees) => {
 }
 
   promptUser();
+
+
+
+
