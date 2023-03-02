@@ -6,8 +6,9 @@ const Manager = require("./lib/Manager");
 //stores Employee Objects
 const employees = [];
 
-//prompts user for information
+
 const promptUser = () => {
+    //prompts user for information
     inquirer.prompt([
         {
             type: "input",
@@ -31,5 +32,62 @@ const promptUser = () => {
             choices: ["Engineer", "Intern", "Manager"],
         },
     ])
+
+    //Provides prompts for various roles & creates new objects based on user inputs
+    .then((answers) => {
+        //Provides github question for Engineer subclass
+        if(answers.role === "Engineer") {
+            inquirer.prompt([
+                {
+                    type: "input",
+                    name: "github",
+                    message: "What is the engineer's Github username?",
+                }
+            ])
+
+            //creates new engineer object w/ property data from user input
+            .then((engineerAnswer) => {
+                const engineer = new Engineer(answers.name, answers.id, answers.email, engineerAnswer.github);
+                employees.push(engineer);
+                //add prompt for new employee
+            });
+        }
+
+        //Provides school question for Intern subclass
+        else if (answers.role === "Intern") {
+            inquirer.prompt([
+                {
+                    type: "input",
+                    name: "school",
+                    message: "What is the intern's school?",
+                }
+            ])
+
+            //creates new intern object w/ property data from user input
+            .then((internAnswer) => {
+                const intern = new Intern(answers.name, answers.id, answers.email, internAnswer.school);
+                employees.push(intern);
+                //add prompt for new employee
+            });
+        }
+
+        //Provides officeNumber question for Manager subclass
+        else if (answers.role === "Manager") {
+            inquirer.prompt([
+                {
+                    type: "input",
+                    name: "officeNumber",
+                    message: "What is the manager's office number?",
+                }
+            ])
+
+            //creates new manager object w/ property data from user input
+            .then((managerAnswer) => {
+                const manager = new Manager(answers.name, answers.id, answers.email, managerAnswer.officeNumber);
+                employees.push(manager);
+                //add prompt for new employee
+            });
+        }
+    }); 
 }
 
