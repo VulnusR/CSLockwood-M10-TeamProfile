@@ -204,15 +204,34 @@ const generateEmployeeCards = (employees) => {
     const internCards = generateInternCards(interns);
 
     // Replace the placeholder in the template with the generated employee cards
-    const output = template.replace("{{employeeCards}}", `
-    <section id="sectionsparent">
-      ${managerCards}
-      ${engineerCards}
-      ${internCards}
-    </section>
+    const mOutput = template.replace("{{mreplace}}", `
+    <div class="managerbox">
+    ${managerCards}
+    </div>
     `);
 
-    return output;
+    return mOutput;
+
+    const eOutput = template.replace("{{ereplace}}", `
+    <div class="engineerbox">
+    ${engineerCards}
+    </div>
+    `);
+
+    return eOutput;
+
+
+    const iOutput = template.replace("{{ireplace}}", `
+    <div class="internbox">
+    ${internCards}
+    </div>
+    `);
+
+    return iOutput;
+
+    
+    
+    
  
 }
 
