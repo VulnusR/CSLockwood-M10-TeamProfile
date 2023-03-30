@@ -1,0 +1,152 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+  }
+
+header {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+main {
+    min-height: 100vh;
+    max-height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sectionsparent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3%;
+    width: 75%;
+    height: 100%;
+
+}
+
+#managersectionparent {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: fit-content;
+    justify-content: center;
+    
+}
+
+.mcardimport {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.managerbox {
+    width: 250px;
+    height: 350px;
+    margin: 15px;
+}
+
+.mboxheader {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
+    color: white;
+}
+
+.mboxbody {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
+}
+
+#engineersectionparent {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: fit-content;
+    justify-content: center;
+}
+
+.ecardimport {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.engineerbox {
+    width: 250px;
+    height: 350px;
+    margin: 15px;
+}
+
+.eboxheader {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
+    color: white;
+}
+
+.eboxbody {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
+}
+
+#internsectionparent {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: fit-content;
+    justify-content: center;
+}
+
+.icardimport {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.internbox {
+    width: 250px;
+    height: 350px;
+    margin: 15px;
+}
+
+.iboxheader {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
+    color: white;
+}
+
+.iboxbody {
+    text-align: left;
+    text-indent: 5%;
+    padding: 3%;
+    font-size: medium;
+}
+
+.empty {
+    display: none;
+  }
